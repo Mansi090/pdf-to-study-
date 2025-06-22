@@ -15,10 +15,7 @@ A full-stack, AI-powered study tool that lets you upload PDF/DOCX files and gene
 
 ---
 
-## 🖼️ Screenshots
-<!-- Add screenshots here -->
-image.png
----
+
 
 ## 🛠️ Technologies Used
 - **Frontend:** React, Tailwind CSS, JavaScript, HTML
