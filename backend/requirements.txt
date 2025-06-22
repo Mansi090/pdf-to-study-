@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+PyPDF2
+python-docx
+openai
+langchain
+pinecone-client
+pydantic
+httpx

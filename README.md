@@ -1,58 +1,85 @@
 # Multi-Output Study Tool Web App
 
-A responsive web application built with React and Tailwind CSS that enables users to upload a PDF or DOCX file and generate various study aids including flashcards, summaries, multiple-choice questions (MCQs), and a quiz game. The application is designed with a clean, modern, and pixel-perfect user interface, ensuring usability across devices. It includes a mock backend to simulate real data processing and demonstrate front-end proficiency, with potential for future AI or backend integration.
+A full-stack, AI-powered study tool that lets you upload PDF/DOCX files and generate summaries, flashcards, MCQs, and quiz games. Built with a modern React + Tailwind CSS frontend and a FastAPI backend with LangChain, OpenAI, and Pinecone for Retrieval-Augmented Generation (RAG).
 
-## Features
+---
 
-### File Upload
-Users can upload PDF or DOCX files through a drag-and-drop area or a traditional file browser input.
+## ✨ Features
+- **Drag-and-drop PDF/DOCX upload**
+- **Output selection:** Summaries, Flashcards, MCQs, Quiz Game
+- **Pastel, animated UI:** Loading spinner, error alerts, fade-in results
+- **Responsive:** Stacked on mobile, multi-column on desktop
+- **LLM-powered backend:** Summarization, Q&A, MCQ, quiz via OpenAI + LangChain
+- **RAG with Pinecone:** Context-aware, relevant outputs
+- **Dockerized backend:** Easy deployment anywhere (AWS, local)
 
-### Output Selection
-A dropdown menu allows users to select one of the following outputs:
-- Flashcards
-- Summary
-- Multiple-choice questions (MCQs)
-- Quiz game
+---
 
-### Dynamic Display
-The application dynamically renders the selected output:
-- Flashcards as front-back pairs
-- Summary as readable text
-- MCQs with options and correct answers
-- Quiz game with interactive question flow
+## 🖼️ Screenshots
+<!-- Add screenshots here -->
+image.png
+---
 
-### Responsive Layout
-- Mobile: Stacked layout for ease of use
-- Desktop: Multi-column layout for better readability
+## 🛠️ Technologies Used
+- **Frontend:** React, Tailwind CSS, JavaScript, HTML
+- **Backend:** Python, FastAPI, LangChain, OpenAI API, Pinecone, PyPDF2, python-docx
+- **DevOps:** Docker, GitHub Actions (CI/CD), AWS-ready
 
-### Mock Back-End
-The app uses mock responses to simulate back-end processing for each output type. This structure highlights front-end capabilities while allowing room for future enhancements.
+---
 
-## Technologies Used
+## 🚀 Getting Started
 
-- **React**: For building an interactive, component-based user interface
-- **Tailwind CSS**: For modern, responsive, and utility-first styling
-- **JavaScript**: For handling logic, state management, and dynamic rendering
-- **HTML**: For semantic structure and accessibility
-- **Git**: For version control and collaboration
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/multi-output-study-tool.git
+cd multi-output-study-tool
+```
 
-## Installation
+### 2. Frontend Setup
+```bash
+npm install
+npm run dev
+```
+- App runs at [http://localhost:5173](http://localhost:5173)
 
-1. Clone the repository:
+### 3. Backend Setup (Docker, recommended)
+1. Create a `.env` file in `backend/`:
+   ```env
+   OPENAI_API_KEY=your-openai-key
+   PINECONE_API_KEY=your-pinecone-key
+   PINECONE_ENV=your-pinecone-environment
+   PINECONE_INDEX=study-tool-index
+   ```
+2. Build and run the backend:
    ```bash
-   git clone https://github.com/your-username/multi-output-study-tool.git
+   docker build -t study-backend ./backend
+   docker run --env-file ./backend/.env -p 8000:8000 study-backend
+   ```
+- API runs at [http://localhost:8000](http://localhost:8000)
 
-2. Navigate into the project directory:
-   ```bash
-    cd multi-output-study-tool
+### 4. Connect Frontend to Backend
+- The frontend is preconfigured to call the backend at `localhost:8000`.
+- Upload a PDF/DOCX, select output, and enjoy AI-generated study aids!
 
-3. Install the dependencies:
-   ```bash
-    npm install
+---
+
+## ☁️ AWS Deployment
+- Deploy the backend container to AWS ECS, ECR, or EC2.
+- Use the provided Dockerfile and `.env` for environment variables.
+- Set up CI/CD with GitHub Actions for automated deploys.
+
+---
 
 
-4. Start the development server:
-   ```bash
-    npm start
+
+---
+
+## 🤝 Contributing
+Pull requests welcome! For major changes, open an issue first.
+
+---
+
+## 📧 License
+MIT
 
 
